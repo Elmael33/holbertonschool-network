@@ -1,0 +1,41 @@
+What Happens When You Type https://www.google.com and Press Enter?
+This question is a staple in software engineering interviews and evaluates your understanding of web technologies. It’s a great opportunity to showcase your knowledge of the 
+internet’s underlying mechanisms. Below, we’ll break down the steps that occur when you type a URL into your browser and press Enter.
+
+DNS Request
+The browser checks its cache for the IP address of www.google.com. If not found, it queries the operating system, which reaches out to DNS servers in a hierarchical 
+process involving root servers, TLD servers, and authoritative DNS servers. Finally, the IP address is returned to the browser.
+
+TCP/IP
+With the IP address obtained, the browser establishes a TCP connection on port 443 using a three-way handshake. This ensures reliable communication between the browser 
+and the server over the Internet Protocol (IP).
+
+Firewall
+Before the request reaches the server, it passes through firewalls that inspect the traffic for security threats. Firewalls use access control lists and other mechanisms 
+to filter out malicious or unauthorized requests.
+
+HTTPS/SSL
+To secure the communication, the browser and server perform a TLS handshake. This process involves verifying the server’s SSL certificate and exchanging encryption 
+keys to protect the data in transit.
+
+Load Balancer
+The request is routed through a load balancer, which distributes traffic across multiple servers. This ensures the system remains highly available and responsive, even under 
+heavy load.
+
+Web Server
+The load balancer forwards the request to a web server, such as Nginx or Apache. The web server handles static content and forwards dynamic content requests to an 
+application server.
+
+Application Server
+The application server executes backend logic and generates the required dynamic content. It might use frameworks like Django, Flask, or Node.js to process the request.
+
+Database
+If the request involves data retrieval, the application server queries the database. The database returns the necessary data, which the application server incorporates 
+into the response.
+
+Response Rendering
+The web server sends the response back to the browser, which renders the HTML, CSS, and JavaScript to display the webpage. At this point, you see www.google.com 
+fully loaded in your browser.
+
+Understanding these steps demonstrates how interconnected systems ensure smooth and secure web experiences. From DNS resolution to database queries, each layer is vital in 
+delivering a seamless result.
